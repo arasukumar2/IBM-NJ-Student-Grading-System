@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+
+<h2>Courses</h2>
+
+<form method="POST" class="row g-3 mb-4">
+  <div class="col-md-3">
+    <input class="form-control" name="code" placeholder="Code" required>
+  </div>
+  <div class="col-md-5">
+    <input class="form-control" name="name" placeholder="Course Name" required>
+  </div>
+  <div class="col-md-2">
+    <input class="form-control" name="credits" type="number" placeholder="Credits" required>
+  </div>
+  <div class="col-md-2">
+    <button class="btn btn-success w-100">Add Course</button>
+  </div>
+</form>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Credits</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% courses.forEach(c => { %>
+      <tr>
+        <td><%= c.code %></td>
+        <td><%= c.name %></td>
+        <td><%= c.credits %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+
+<h2>Grades</h2>
+
+<form method="POST" class="row g-3 mb-4">
+  <div class="col-md-3">
+    <select name="student_id" class="form-select" required>
+      <option value="">Select Student</option>
+      <% students.forEach(s => { %>
+        <option value="<%= s.id %>"><%= s.name %></option>
+      <% }) %>
+    </select>
+  </div>
+  <div class="col-md-3">
+    <select name="course_id" class="form-select" required>
+      <option value="">Select Course</option>
+      <% courses.forEach(c => { %>
+        <option value="<%= c.id %>"><%= c.name %></option>
+      <% }) %>
+    </select>
+  </div>
+  <div class="col-md-3">
+    <input type="number" name="marks" class="form-control" placeholder="Marks" min="0" max="100" required>
+  </div>
+  <div class="col-md-3">
+    <button class="btn btn-success w-100">Submit Grade</button>
+  </div>
+</form>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Course</th>
+      <th>Marks</th>
+      <th>Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% grades.forEach(g => { %>
+      <tr>
+        <td><%= g.student %></td>
+        <td><%= g.course %></td>
+        <td><%= g.marks %></td>
+        <td><%= g.grade %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<%- include('partials/footer') %>
