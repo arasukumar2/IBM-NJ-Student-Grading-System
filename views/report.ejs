@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+
+<h2>Report for <%= student.name %> (<%= student.roll %>)</h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Course Code</th>
+      <th>Course Name</th>
+      <th>Credits</th>
+      <th>Marks</th>
+      <th>Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% rows.forEach(r => { %>
+      <tr>
+        <td><%= r.code %></td>
+        <td><%= r.name %></td>
+        <td><%= r.credits %></td>
+        <td><%= r.marks ?? 'N/A' %></td>
+        <td><%= r.grade ?? 'N/A' %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<h4>GPA: <%= gpa %></h4>
+
+<%- include('partials/footer') %>

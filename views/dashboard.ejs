@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+
+<h2>Dashboard</h2>
+
+<ul>
+  <li>Total Students: <%= studentCount %></li>
+  <li>Total Courses: <%= courseCount %></li>
+  <li>Total Grades: <%= gradeCount %></li>
+</ul>
+
+<nav class="mt-4">
+  <a href="/students" class="btn btn-outline-primary me-2">Manage Students</a>
+  <a href="/courses" class="btn btn-outline-primary me-2">Manage Courses</a>
+  <a href="/grades" class="btn btn-outline-primary">Manage Grades</a>
+</nav>
+
+<%- include('partials/footer') %>
